@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WebApplication1.Views.ProjectViewModel>
+
+@{
+    //ViewBag.Title = ProjectsList.Title;
+}
+
+<h2>ProjectsList</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-12">
+            @Html.Label(item.Name)
+        </div>
+    }
+</div>

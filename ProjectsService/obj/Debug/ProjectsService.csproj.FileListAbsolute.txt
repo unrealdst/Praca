@@ -1,0 +1,9 @@
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\ProjectsService.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\ProjectsService.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\AutoMapper.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\ProjectsRepositorie.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\ProjectsRepositorie.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\AutoMapper.xml
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\obj\Debug\ProjectsService.csprojResolveAssemblyReference.cache
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\obj\Debug\ProjectsService.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\obj\Debug\ProjectsService.pdb
