@@ -45,21 +45,34 @@ namespace WebApplication1
 
             builder.RegisterType<DbContext.Context>();
 
-            builder.RegisterType<HomeController>().InstancePerRequest();
-            builder.RegisterType<ProjectListsController>().InstancePerRequest();
-
-            builder.RegisterType<ProjectListService>().As<IProjectListService>();
-
-            builder.RegisterType<ProjectReadOnlyRepositorie>().As<IProjectReadOnlyRepositorie>();
+            RegisterControllers(builder);
+            RegisterServices(builder);
+            RegisterRepositories(builder);
 
             builder.RegisterType<HelloWorld>().As<IHelloWorld>();
 
             // Set the dependency resolver to be Autofac.
             var container = builder.Build();
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));        
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
 
-        
+        private static void RegisterRepositories(ContainerBuilder builder)
+        {
+            builder.RegisterType<ProjectReadOnlyRepositorie>().As<IProjectReadOnlyRepositorie>();
+        }
+
+        private static void RegisterServices(ContainerBuilder builder)
+        {
+            builder.RegisterType<ProjectListService>().As<IProjectListService>();
+        }
+
+        private static void RegisterControllers(ContainerBuilder builder)
+        {
+            builder.RegisterType<HomeController>().InstancePerRequest();
+            builder.RegisterType<ProjectListsController>().InstancePerRequest();
+            builder.RegisterType<ProjectController>().InstancePerRequest();
+        }
+
 
         public static void RegisterRoutes(RouteCollection routes)
         {

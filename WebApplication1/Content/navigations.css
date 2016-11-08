@@ -1,0 +1,27 @@
+﻿.icon {
+    color: #033703;
+}
+
+.foo {
+    color: #3C19FF;
+}
+
+.action-icon {
+    color: #B25009;
+}
+
+.navbar {
+    background: #033703;
+}
+
+.navbar a.navbar-brand {
+    color: white;
+}
+
+.navbar ul.nav li a{
+    color: white;
+}
+
+.margin-right-sm {
+    margin-right: 5px;
+}

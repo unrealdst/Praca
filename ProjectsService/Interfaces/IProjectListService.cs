@@ -6,5 +6,6 @@ namespace ProjectsService.Interfaces
     public interface IProjectListService
     {
         IEnumerable<ProjectDomainModel> GetAllProjects();
+        ProjectDomainModel GetProject(int projectId);
     }
 }

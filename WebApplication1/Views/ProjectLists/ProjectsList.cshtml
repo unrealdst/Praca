@@ -3,17 +3,23 @@
     ViewBag.Title = @ProjectsList.Title;
 }
 
-<h2>@ProjectsList.Title <a href="@Url.Action("", "")"><i class="fa fa-plus" aria-hidden="true"></i></a> </h2>
+<h2>@ProjectsList.Title <a href="@Url.Action("", "")"><i class="fa fa-plus action-icon" aria-hidden="true"></i></a> </h2>
 
 <div class="row">
     <div class="list-group">
         @foreach (var item in Model)
         {
             <div class="list-group-item">
-                <a href="@Url.Action("", "", new {projectId = item.Id})"><i class="fa fa-address-card" aria-hidden="true"></i></a>
-                <a href="@Url.Action("", "", new {projectId = item.Id})"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                <a href="@Url.Action("", "", new {projectId = item.Id})"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 @Html.Label(item.Name)
+                <span class="pull-right margin-right-sm">
+                    <a href="@Url.Action("Project", "Project", new {projectId = item.Id})"><i class="fa fa-address-card action-icon" aria-hidden="true"></i></a>
+                </span>
+                <span class="pull-right margin-right-sm">
+                        <a href="@Url.Action("", "", new {projectId = item.Id})"><i class="fa fa-pencil action-icon" aria-hidden="true"></i></a>
+                    </span>
+                <span class="pull-right margin-right-sm">
+                    <a href="@Url.Action("", "", new {projectId = item.Id})"><i class="fa fa-trash action-icon" aria-hidden="true"></i></a>
+                </span>
             </div>
         }
     </div>

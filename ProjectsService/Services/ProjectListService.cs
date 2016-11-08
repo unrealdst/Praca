@@ -31,5 +31,11 @@ namespace ProjectsService.Services
             var projects = projectReadOnlyRepositorie.GetProjects().ToList();
             return mapper.Map<IEnumerable<ProjectDomainModel>>(projects);
         }
+
+        public ProjectDomainModel GetProject(int projectId)
+        {
+            var project = projectReadOnlyRepositorie.GetProject(projectId);
+            return mapper.Map<ProjectDomainModel>(project);
+        }
     }
 }
