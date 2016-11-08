@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.Views
+﻿namespace WebApplication1.Models
 {
     public class ProjectViewModel
     {

@@ -3,7 +3,7 @@ using ProjectsRepositorie.Models;
 
 namespace ProjectsRepositorie.Interfaces
 {
-    public interface IProjectReadOnlyRepositorie
+    public interface IProjectRepositorie
     {
         IQueryable<ProjectStorageModel> GetProjects();
 

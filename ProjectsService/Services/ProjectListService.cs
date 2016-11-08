@@ -7,17 +7,23 @@ using ProjectsRepositorie.Interfaces;
 using ProjectsRepositorie.Models;
 using ProjectsService.DomainModel;
 using ProjectsService.Interfaces;
+using UsersRepositories.Interfaces;
 
 namespace ProjectsService.Services
 {
     public class ProjectListService : IProjectListService
     {
-        private readonly IProjectReadOnlyRepositorie projectReadOnlyRepositorie;
+        private readonly IProjectRepositorie projectRepositorie;
+        private readonly IUserRepositorie userRepositorie;
         private readonly IMapper mapper;
 
-        public ProjectListService(IProjectReadOnlyRepositorie projectReadOnlyRepositorie)
+        public ProjectListService(
+            IProjectRepositorie projectRepositorie,
+            IUserRepositorie userRepositorie)
         {
-            this.projectReadOnlyRepositorie = projectReadOnlyRepositorie;
+            this.projectRepositorie = projectRepositorie;
+            this.userRepositorie = userRepositorie;
+
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ProjectStorageModel, ProjectDomainModel>();
@@ -28,14 +34,17 @@ namespace ProjectsService.Services
 
         public IEnumerable<ProjectDomainModel> GetAllProjects()
         {
-            var projects = projectReadOnlyRepositorie.GetProjects().ToList();
+            var projects = projectRepositorie.GetProjects().ToList();
             return mapper.Map<IEnumerable<ProjectDomainModel>>(projects);
         }
 
         public ProjectDomainModel GetProject(int projectId)
         {
-            var project = projectReadOnlyRepositorie.GetProject(projectId);
-            return mapper.Map<ProjectDomainModel>(project);
+            var project = projectRepositorie.GetProject(projectId);
+            var projectDomainModel = mapper.Map<ProjectDomainModel>(project);
+            var owner = userRepositorie.GetUser(projectDomainModel.ProjectOwnerId);
+            projectDomainModel.OwnerName = owner.UserName;
+            return projectDomainModel;
         }
     }
 }

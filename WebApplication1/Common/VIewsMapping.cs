@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using ProjectsService.DomainModel;
-using WebApplication1.Views;
+using WebApplication1.Models;
 
 namespace WebApplication1.Common
 {

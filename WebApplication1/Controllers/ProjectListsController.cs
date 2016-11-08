@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using ProjectsService.DomainModel;
 using ProjectsService.Interfaces;
-using WebApplication1.Views;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {

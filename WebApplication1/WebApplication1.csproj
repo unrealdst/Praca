@@ -201,6 +201,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Controllers\ProjectListsController.cs" />
+    <Compile Include="Models\ProjectDetailViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\ProjectsList.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -208,7 +209,7 @@
       <DependentUpon>ProjectsList.resx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="Views\ProjectViewMOdel.cs" />
+    <Compile Include="Models\ProjectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -329,6 +330,10 @@
     <ProjectReference Include="..\ProjectsService\ProjectsService.csproj">
       <Project>{9D52737C-C95D-4E55-9BA9-92ED5D90F47A}</Project>
       <Name>ProjectsService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsersRepositories\UsersRepositories.csproj">
+      <Project>{24045233-11CC-437E-8B89-CECA54B4BC7A}</Project>
+      <Name>UsersRepositories</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

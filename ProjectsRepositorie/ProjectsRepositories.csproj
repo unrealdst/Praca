@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IProjectReadOnlyRepositorie.cs" />
+    <Compile Include="Interfaces\IProjectRepositorie.cs" />
     <Compile Include="ProjectsRepositorieMapping.cs" />
     <Compile Include="Models\ProjectStorageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ProjectReadOnlyRepositorie.cs" />
+    <Compile Include="Repositories\ProjectRepositorie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

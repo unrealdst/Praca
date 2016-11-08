@@ -2,7 +2,7 @@
 using AutoMapper;
 using ProjectsService.DomainModel;
 using ProjectsService.Interfaces;
-using WebApplication1.Views;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
             this.projectListService = projectListService;
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<ProjectDomainModel, ProjectViewModel>();
+                cfg.CreateMap<ProjectDomainModel, ProjectDetailViewModel>();
             });
             mapper = config.CreateMapper();
         }
@@ -24,7 +24,7 @@ namespace WebApplication1.Controllers
         public ActionResult Project(int projectId)
         {
             var project = projectListService.GetProject(projectId);
-            var viewModel = mapper.Map<ProjectViewModel>(project);
+            var viewModel = mapper.Map<ProjectDetailViewModel>(project);
             return View(viewModel);
         }
     }

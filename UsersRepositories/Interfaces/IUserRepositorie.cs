@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using UsersRepositories.Models;
 
 namespace UsersRepositories.Interfaces
 {
-    interface IUserRepositorie
+    public interface IUserRepositorie
     {
+        UserStorageModel GetUser(string id);
+
+        IQueryable<UserStorageModel> GetUsers();
     }
 }

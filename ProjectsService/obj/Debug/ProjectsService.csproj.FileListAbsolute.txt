@@ -11,3 +11,5 @@ C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\Pr
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\EntityFramework.dll
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\DbContext.pdb
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\EntityFramework.xml
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\UsersRepositories.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsService\bin\Debug\UsersRepositories.pdb

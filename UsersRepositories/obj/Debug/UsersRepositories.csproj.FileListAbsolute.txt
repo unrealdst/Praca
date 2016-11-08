@@ -1,0 +1,11 @@
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\bin\Debug\UsersRepositories.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\bin\Debug\UsersRepositories.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\bin\Debug\AutoMapper.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\bin\Debug\DbContext.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\bin\Debug\EntityFramework.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\bin\Debug\DbContext.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\bin\Debug\AutoMapper.xml
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\bin\Debug\EntityFramework.xml
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\obj\Debug\UsersRepositories.csprojResolveAssemblyReference.cache
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\obj\Debug\UsersRepositories.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\UsersRepositories\obj\Debug\UsersRepositories.pdb

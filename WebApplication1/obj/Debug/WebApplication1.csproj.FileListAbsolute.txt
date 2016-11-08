@@ -85,3 +85,5 @@ C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\We
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csproj.GenerateResource.Cache
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\bin\DbContext.dll
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\bin\DbContext.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\bin\UsersRepositories.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\bin\UsersRepositories.pdb

@@ -11,6 +11,8 @@ using ProjectsRepositorie.Repositories;
 using ProjectsService;
 using ProjectsService.Interfaces;
 using ProjectsService.Services;
+using UsersRepositories.Interfaces;
+using UsersRepositories.Repositories;
 using WebApplication1.Common;
 using WebApplication1.Controllers;
 
@@ -59,7 +61,8 @@ namespace WebApplication1
 
         private static void RegisterRepositories(ContainerBuilder builder)
         {
-            builder.RegisterType<ProjectReadOnlyRepositorie>().As<IProjectReadOnlyRepositorie>();
+            builder.RegisterType<ProjectRepositorie>().As<IProjectRepositorie>();
+            builder.RegisterType<UserRepositorie>().As<IUserRepositorie>();
         }
 
         private static void RegisterServices(ContainerBuilder builder)

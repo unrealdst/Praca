@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
-using DbContext;
 using DbContext.Models;
 using ProjectsRepositorie.Interfaces;
 using ProjectsRepositorie.Models;
 
 namespace ProjectsRepositorie.Repositories
 {
-    public class ProjectReadOnlyRepositorie : IProjectReadOnlyRepositorie
+    public class ProjectRepositorie : IProjectRepositorie
     {
         private readonly ContextEntities dbContext;
 
-        public ProjectReadOnlyRepositorie(ContextEntities context)
+        public ProjectRepositorie(ContextEntities context)
         {
             dbContext = context;
 
             Mapper.Initialize(cfg =>
             {
-                cfg.CreateMap<Project, ProjectStorageModel>();
+                cfg.CreateMap<DbContext.Models.Project, ProjectStorageModel>();
             });
         }
 
