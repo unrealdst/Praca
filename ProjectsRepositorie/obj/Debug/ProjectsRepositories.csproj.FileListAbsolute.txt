@@ -2,11 +2,13 @@ C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\Pr
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\ProjectsRepositorie.dll
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\ProjectsRepositorie.pdb
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\AutoMapper.dll
-C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\EntityFramework.dll
-C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\AutoMapper.xml
-C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\EntityFramework.xml
-C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\obj\Debug\ProjectsRepositories.csprojResolveAssemblyReference.cache
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\obj\Debug\ProjectsRepositorie.dll
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\obj\Debug\ProjectsRepositorie.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\DbContext.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\EntityFramework.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\DbContext.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\EntityFramework.xml
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ProjectsRepositorie\bin\Debug\EntityFramework.SqlServer.xml

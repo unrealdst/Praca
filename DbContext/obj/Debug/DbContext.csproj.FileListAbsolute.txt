@@ -1,0 +1,10 @@
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\bin\Debug\DbContext.dll.config
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\bin\Debug\DbContext.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\bin\Debug\DbContext.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\bin\Debug\EntityFramework.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\bin\Debug\EntityFramework.xml
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\obj\Debug\DbContext.csprojResolveAssemblyReference.cache
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\obj\Debug\DbContext.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\DbContext\obj\Debug\DbContext.pdb

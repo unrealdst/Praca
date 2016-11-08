@@ -43,6 +43,8 @@ namespace WebApplication1
             // OPTIONAL: Enable property injection into action filters.
             builder.RegisterFilterProvider();
 
+            builder.RegisterType<DbContext.Context>();
+
             builder.RegisterType<HomeController>().InstancePerRequest();
             builder.RegisterType<ProjectListsController>().InstancePerRequest();
 
