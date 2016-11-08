@@ -4,6 +4,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 using AutoMapper;
+using DbContext.Models;
 using ProjectsRepositorie;
 using ProjectsRepositorie.Interfaces;
 using ProjectsRepositorie.Repositories;
@@ -43,7 +44,7 @@ namespace WebApplication1
             // OPTIONAL: Enable property injection into action filters.
             builder.RegisterFilterProvider();
 
-            builder.RegisterType<DbContext.Context>();
+            builder.RegisterType<ContextEntities>();
 
             RegisterControllers(builder);
             RegisterServices(builder);

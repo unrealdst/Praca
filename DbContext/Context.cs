@@ -13,6 +13,10 @@ namespace DbContext
         }
 
         public DbSet<Project> Projects { get; set; }
+        public DbSet<AspNetRoles> AspNetRoleses { get; set; }
+        public DbSet<AspNetUserClaims> AspNetUserClaimses { get; set; }
+        public DbSet<AspNetUserLogins> AspNetUserLoginses { get; set; }
+        public DbSet<AspNetUsers> AspNetUserses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

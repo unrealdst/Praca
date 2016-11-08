@@ -12,9 +12,9 @@ namespace ProjectsRepositorie.Repositories
 {
     public class ProjectReadOnlyRepositorie : IProjectReadOnlyRepositorie
     {
-        private readonly Context dbContext;
+        private readonly ContextEntities dbContext;
 
-        public ProjectReadOnlyRepositorie(Context context)
+        public ProjectReadOnlyRepositorie(ContextEntities context)
         {
             dbContext = context;
 
@@ -27,14 +27,14 @@ namespace ProjectsRepositorie.Repositories
         public IQueryable<ProjectStorageModel> GetProjects()
         {
             return dbContext
-                .Projects
+                .Project
                 .ProjectTo<ProjectStorageModel>();
         }
 
         public ProjectStorageModel GetProject(int id)
         {
             return dbContext
-                .Projects
+                .Project
                 .ProjectTo<ProjectStorageModel>()
                 .Single(x => x.Id == id);
         }
