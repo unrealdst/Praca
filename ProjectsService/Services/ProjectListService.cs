@@ -15,14 +15,17 @@ namespace ProjectsService.Services
     {
         private readonly IProjectRepositorie projectRepositorie;
         private readonly IUserRepositorie userRepositorie;
+        private readonly IClientRepositorie clientRepositorie;
         private readonly IMapper mapper;
 
         public ProjectListService(
             IProjectRepositorie projectRepositorie,
-            IUserRepositorie userRepositorie)
+            IUserRepositorie userRepositorie, 
+            IClientRepositorie clientRepositorie)
         {
             this.projectRepositorie = projectRepositorie;
             this.userRepositorie = userRepositorie;
+            this.clientRepositorie = clientRepositorie;
 
             var config = new MapperConfiguration(cfg =>
             {
@@ -44,6 +47,7 @@ namespace ProjectsService.Services
             var projectDomainModel = mapper.Map<ProjectDomainModel>(project);
             var owner = userRepositorie.GetUser(projectDomainModel.ProjectOwnerId);
             projectDomainModel.OwnerName = owner.UserName;
+            projectDomainModel.ClientName = clientRepositorie.GetClient(projectDomainModel.ClientId).Name;
             return projectDomainModel;
         }
     }

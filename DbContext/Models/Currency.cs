@@ -12,14 +12,19 @@ namespace DbContext.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Project
+    public partial class Currency
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Currency()
+        {
+            this.Client = new HashSet<Client>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
-        public string ProjectOwnerId { get; set; }
-        public Nullable<int> ClientId { get; set; }
+        public string ShortName { get; set; }
     
-        public virtual AspNetUsers AspNetUsers { get; set; }
-        public virtual Client Client { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Client> Client { get; set; }
     }
 }

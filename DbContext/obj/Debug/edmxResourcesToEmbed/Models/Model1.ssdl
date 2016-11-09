@@ -51,6 +51,24 @@
     <Property Name="AccessFailedCount" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
   </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="128" Nullable="false" />
+    <Property Name="Adress" Type="nchar" MaxLength="10" />
+    <Property Name="Country" Type="nchar" MaxLength="10" />
+    <Property Name="CurrencyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ShortName" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Context.dbo.Project' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Project">
@@ -61,7 +79,32 @@ warning 6002: The table/view 'Context.dbo.Project' does not have a primary key d
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" />
     <Property Name="ProjectOwnerId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClientId" Type="int" />
   </EntityType>
+  <Association Name="FK__Client__Currency__4BAC3F29">
+    <End Role="Currency" Type="Self.Currency" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Project__ClientI__4F7CD00D">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Project__Project__37A5467C">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
     <End Role="Project" Type="Self.Project" Multiplicity="*" />
@@ -136,13 +179,24 @@ warning 6002: The table/view 'Context.dbo.Project' does not have a primary key d
     <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Project" EntityType="Self.Project" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [Project].[Id] AS [Id], 
     [Project].[Name] AS [Name], 
-    [Project].[ProjectOwnerId] AS [ProjectOwnerId]
+    [Project].[ProjectOwnerId] AS [ProjectOwnerId], 
+    [Project].[ClientId] AS [ClientId]
     FROM [dbo].[Project] AS [Project]</DefiningQuery>
     </EntitySet>
+    <AssociationSet Name="FK__Client__Currency__4BAC3F29" Association="Self.FK__Client__Currency__4BAC3F29">
+      <End Role="Currency" EntitySet="Currency" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Project__ClientI__4F7CD00D" Association="Self.FK__Project__ClientI__4F7CD00D">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
     <AssociationSet Name="FK__Project__Project__37A5467C" Association="Self.FK__Project__Project__37A5467C">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Project" EntitySet="Project" />

@@ -59,6 +59,8 @@
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ProjectOwnerId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="AspNetUsers" Relationship="ContextModel.FK__Project__Project__37A5467C" FromRole="Project" ToRole="AspNetUsers" />
+    <Property Name="ClientId" Type="Int32" />
+    <NavigationProperty Name="Client" Relationship="ContextModel.FK__Project__ClientI__4F7CD00D" FromRole="Project" ToRole="Client" />
   </EntityType>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
@@ -114,6 +116,16 @@
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Project" EntitySet="Project" />
     </AssociationSet>
+    <EntitySet Name="Client" EntityType="ContextModel.Client" />
+    <EntitySet Name="Currency" EntityType="ContextModel.Currency" />
+    <AssociationSet Name="FK__Client__Currency__4BAC3F29" Association="ContextModel.FK__Client__Currency__4BAC3F29">
+      <End Role="Currency" EntitySet="Currency" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Project__ClientI__4F7CD00D" Association="ContextModel.FK__Project__ClientI__4F7CD00D">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="FK__Project__Project__37A5467C">
     <End Type="ContextModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1" />
@@ -124,6 +136,51 @@
       </Principal>
       <Dependent Role="Project">
         <PropertyRef Name="ProjectOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="128" FixedLength="true" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CurrencyId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Currency" Relationship="ContextModel.FK__Client__Currency__4BAC3F29" FromRole="Client" ToRole="Currency" />
+    <NavigationProperty Name="Project" Relationship="ContextModel.FK__Project__ClientI__4F7CD00D" FromRole="Client" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ShortName" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Client" Relationship="ContextModel.FK__Client__Currency__4BAC3F29" FromRole="Currency" ToRole="Client" />
+  </EntityType>
+  <Association Name="FK__Client__Currency__4BAC3F29">
+    <End Type="ContextModel.Currency" Role="Currency" Multiplicity="1" />
+    <End Type="ContextModel.Client" Role="Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="CurrencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Project__ClientI__4F7CD00D">
+    <End Type="ContextModel.Client" Role="Client" Multiplicity="0..1" />
+    <End Type="ContextModel.Project" Role="Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ClientId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

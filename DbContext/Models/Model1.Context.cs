@@ -30,5 +30,7 @@ namespace DbContext.Models
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Project> Project { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
+        public virtual DbSet<Currency> Currency { get; set; }
     }
 }

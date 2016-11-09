@@ -27,5 +27,21 @@ namespace WebApplication1.Controllers
             var viewModel = mapper.Map<ProjectDetailViewModel>(project);
             return View(viewModel);
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return null;
+        }
+
+        [HttpPost]
+        public ActionResult Create(ProjectInputModel project)
+        {
+            if (ModelState.IsValid)
+            {
+                
+            }
+            return null;
+        }
     }
 }

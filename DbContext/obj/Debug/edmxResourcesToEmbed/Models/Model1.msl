@@ -49,6 +49,7 @@
     <EntitySetMapping Name="Project">
       <EntityTypeMapping TypeName="ContextModel.Project">
         <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
           <ScalarProperty Name="ProjectOwnerId" ColumnName="ProjectOwnerId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -63,5 +64,25 @@
         <ScalarProperty Name="Id" ColumnName="UserId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="ContextModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currency">
+      <EntityTypeMapping TypeName="ContextModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

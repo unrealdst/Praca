@@ -63,6 +63,7 @@ namespace WebApplication1
         {
             builder.RegisterType<ProjectRepositorie>().As<IProjectRepositorie>();
             builder.RegisterType<UserRepositorie>().As<IUserRepositorie>();
+            builder.RegisterType<ClientRepositorie>().As<IClientRepositorie>();
         }
 
         private static void RegisterServices(ContainerBuilder builder)
