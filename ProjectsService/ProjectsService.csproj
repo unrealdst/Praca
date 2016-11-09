@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainModel\AddProjectDomainModel.cs" />
     <Compile Include="DomainModel\ProjectDomainModel.cs" />
     <Compile Include="Interfaces\IProjectListService.cs" />
     <Compile Include="ProjectsServiceMapping.cs" />

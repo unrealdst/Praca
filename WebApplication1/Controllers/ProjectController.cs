@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using AutoMapper;
 using ProjectsService.DomainModel;
 using ProjectsService.Interfaces;
@@ -29,19 +30,37 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create()
+        public ActionResult Create(CreateProjectViewModel inputModel = null)
         {
-            return null;
+            inputModel = new CreateProjectViewModel()
+            {
+                Clients = new List<ClienViewModel>()
+                {
+                    new ClienViewModel() {Id = 1,Name = "asdf"},
+                    new ClienViewModel() {Id = 2,Name = "asdfasdasd"},
+                    new ClienViewModel() {Id = 3,Name = "asdczxcf"}
+                },
+                ProjectOwners = new List<UserViewModel>()
+                {
+                    new UserViewModel() {Id ="asada",Name="dsadas" },
+                    new UserViewModel() {Id ="as1ada",Name="dsad213as" },
+                    new UserViewModel() {Id ="as1ada",Name="dsaddsadaas" }
+                }
+            };
+            return View(inputModel);
         }
 
         [HttpPost]
-        public ActionResult Create(ProjectInputModel project)
+        public ActionResult Create(CreateProjectInputModel project)
         {
             if (ModelState.IsValid)
             {
-                
+                var addProjectDomainModel = mapper.Map<AddProjectDomainModel>(project);
+                projectListService.AddProject(addProjectDomainModel);
             }
-            return null;
+            
+            var recritedModel = new CreateProjectViewModel();
+            return RedirectToAction("Create",new {inputModel = recritedModel});
         }
     }
 }

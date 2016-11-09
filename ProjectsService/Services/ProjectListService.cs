@@ -50,5 +50,10 @@ namespace ProjectsService.Services
             projectDomainModel.ClientName = clientRepositorie.GetClient(projectDomainModel.ClientId).Name;
             return projectDomainModel;
         }
+
+        public void AddProject(AddProjectDomainModel addProjectDomainModel)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -25,3 +25,34 @@
 .margin-right-sm {
     margin-right: 5px;
 }
+
+.input-panel .panel-body input {
+   border-radius: 0px;
+}
+
+.input-panel .panel-body {
+    padding: 0px;
+}
+
+.input-panel {
+    border-radius: 0px;
+}
+
+.input-panel button {
+    border-radius: 0px;
+}
+
+div.panel.panel-default.input-panel div.bootstrap-select {
+    width: 100%;
+    border-radius: 0px;
+}
+
+button a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover, a:visited, a:link, a:active{
+    text-decoration: none;    
+    color: black;
+}

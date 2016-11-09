@@ -21,11 +21,13 @@ namespace WebApplication1
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-select.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
+                      "~/Content/bootstrap-select.min.css",
                       "~/Content/navigations.css",
                       "~/Content/font-awesome/css/font-awesome.min.css"));
         }
