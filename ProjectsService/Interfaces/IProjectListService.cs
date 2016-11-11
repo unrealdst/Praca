@@ -8,5 +8,7 @@ namespace ProjectsService.Interfaces
         IEnumerable<ProjectDomainModel> GetAllProjects();
         ProjectDomainModel GetProject(int projectId);
         void AddProject(AddProjectDomainModel addProjectDomainModel);
+
+        CreateProjectDomainModel GetValueToViewModel();
     }
 }

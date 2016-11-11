@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using DbContext.Models;
 using UsersRepositories.Interfaces;
 using UsersRepositories.Models;
@@ -34,6 +32,12 @@ namespace UsersRepositories.Repositories
                 .AspNetUsers
                 .Select(MappingUserToStorageModel);
         }
+
+        public IQueryable<UserStorageModel> GetManagers()
+        {
+            return GetUsers();
+        }
+
         private static Expression<Func<AspNetUsers, UserStorageModel>> MappingUserToStorageModel
         {
             get

@@ -26,6 +26,14 @@ namespace ProjectsRepositorie.Repositories
                 .First();
         }
 
+        public IQueryable<ClientStorageModel> GetClients()
+        {
+            return dbContext
+                .Client
+                .Select(MappingClientToStorageModel)
+                .AsQueryable();
+        }
+
         private static Func<Client, ClientStorageModel> MappingClientToStorageModel
         {
             get

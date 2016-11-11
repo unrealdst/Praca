@@ -8,6 +8,6 @@ namespace WebApplication1.Models
         
         public string ProjectName { get; set; }
 
-        public List<ClienViewModel> Clients { get; set; }
+        public IEnumerable<ClientViewModel> Clients { get; set; }
     }
 }

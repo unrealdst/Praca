@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 using AutoMapper;
@@ -32,6 +33,20 @@ namespace ProjectsRepositorie.Repositories
                 .Where(x => x.Id == id)
                 .Select(MappingProjectToStorageModel)
                 .First();
+        }
+
+        public void AddProject(ProjectStorageModel project)
+        {
+            var dbProject = new Project()
+            {
+                Id = project.Id,
+                Name = project.Name,
+                ProjectOwnerId = project.ProjectOwnerId,
+                ClientId = project.ClientId
+            };
+
+            dbContext.Project.AddOrUpdate(dbProject);
+            dbContext.SaveChanges();
         }
 
         private static Expression<Func<Project, ProjectStorageModel>> MappingProjectToStorageModel => 

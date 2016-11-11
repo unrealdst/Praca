@@ -8,5 +8,7 @@ namespace ProjectsRepositorie.Interfaces
         IQueryable<ProjectStorageModel> GetProjects();
 
         ProjectStorageModel GetProject(int id);
+
+        void AddProject(ProjectStorageModel project);
     }
 }

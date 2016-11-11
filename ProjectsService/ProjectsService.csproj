@@ -49,6 +49,7 @@
     <Compile Include="Interfaces\IProjectListService.cs" />
     <Compile Include="ProjectsServiceMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DomainModel\CreateProjectDomainModel.cs" />
     <Compile Include="Services\ProjectListService.cs" />
   </ItemGroup>
   <ItemGroup>

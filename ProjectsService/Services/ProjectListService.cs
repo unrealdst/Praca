@@ -30,6 +30,7 @@ namespace ProjectsService.Services
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ProjectStorageModel, ProjectDomainModel>();
+                cfg.CreateMap<AddProjectDomainModel, ProjectStorageModel>();
             });
             mapper = config.CreateMapper();
         }
@@ -51,9 +52,20 @@ namespace ProjectsService.Services
             return projectDomainModel;
         }
 
-        public void AddProject(AddProjectDomainModel addProjectDomainModel)
+        public CreateProjectDomainModel GetValueToViewModel()
         {
-            throw new NotImplementedException();
+            var clients = clientRepositorie.GetClients();
+            var managers = userRepositorie.GetManagers();
+            return new CreateProjectDomainModel()
+            {
+                Clients = clients.AsEnumerable(),
+                ProjectOwners = managers.AsEnumerable()
+            };
+        }
+
+        public void AddProject(AddProjectDomainModel addProjectDomainModel)
+        {            
+            projectRepositorie.AddProject(mapper.Map<ProjectStorageModel>(addProjectDomainModel));
         }
     }
 }

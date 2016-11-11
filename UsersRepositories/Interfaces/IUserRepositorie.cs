@@ -8,5 +8,7 @@ namespace UsersRepositories.Interfaces
         UserStorageModel GetUser(string id);
 
         IQueryable<UserStorageModel> GetUsers();
+
+        IQueryable<UserStorageModel> GetManagers();
     }
 }

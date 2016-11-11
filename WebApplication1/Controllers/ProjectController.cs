@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using AutoMapper;
+using ProjectsRepositorie.Models;
 using ProjectsService.DomainModel;
 using ProjectsService.Interfaces;
+using UsersRepositories.Models;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -18,6 +19,11 @@ namespace WebApplication1.Controllers
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ProjectDomainModel, ProjectDetailViewModel>();
+                cfg.CreateMap<CreateProjectInputModel, AddProjectDomainModel>();
+                cfg.CreateMap<CreateProjectDomainModel, CreateProjectViewModel>();
+                cfg.CreateMap<UserStorageModel, UserViewModel>()
+                .ForMember(dest => dest.Name,opts => opts.MapFrom(src => src.UserName));
+                cfg.CreateMap<ClientStorageModel, ClientViewModel>();
             });
             mapper = config.CreateMapper();
         }
@@ -32,21 +38,11 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public ActionResult Create(CreateProjectViewModel inputModel = null)
         {
-            inputModel = new CreateProjectViewModel()
+
+            if (inputModel == null)
             {
-                Clients = new List<ClienViewModel>()
-                {
-                    new ClienViewModel() {Id = 1,Name = "asdf"},
-                    new ClienViewModel() {Id = 2,Name = "asdfasdasd"},
-                    new ClienViewModel() {Id = 3,Name = "asdczxcf"}
-                },
-                ProjectOwners = new List<UserViewModel>()
-                {
-                    new UserViewModel() {Id ="asada",Name="dsadas" },
-                    new UserViewModel() {Id ="as1ada",Name="dsad213as" },
-                    new UserViewModel() {Id ="as1ada",Name="dsaddsadaas" }
-                }
-            };
+                inputModel = mapper.Map<CreateProjectViewModel>(projectListService.GetValueToViewModel());
+            }
             return View(inputModel);
         }
 
