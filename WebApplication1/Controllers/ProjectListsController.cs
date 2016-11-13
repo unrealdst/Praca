@@ -24,7 +24,6 @@ namespace WebApplication1.Controllers
 
         public ActionResult ProjectsList()
         {
-            
             var projects = projectListService.GetAllProjects();
             var result = mapper.Map<IEnumerable<ProjectViewModel>>(projects);
             return View(result);

@@ -189,11 +189,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Common\VIewsMapping.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientListController.cs" />
     <Compile Include="Controllers\HelloWorld.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IHelloWorld.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ScrumTableController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -399,9 +401,11 @@
     <Content Include="Views\ProjectLists\ProjectsList.cshtml" />
     <Content Include="Views\Project\Project.cshtml" />
     <Content Include="Views\Project\Create.cshtml" />
+    <Content Include="Views\ScrumTable\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ClientList\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

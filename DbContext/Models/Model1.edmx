@@ -74,12 +74,9 @@
           <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="ShortName" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Context.dbo.Project' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Project">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="ProjectOwnerId" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" />
@@ -186,14 +183,7 @@ warning 6002: The table/view 'Context.dbo.Project' does not have a primary key d
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Project" EntityType="Self.Project" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Project].[Id] AS [Id], 
-    [Project].[Name] AS [Name], 
-    [Project].[ProjectOwnerId] AS [ProjectOwnerId], 
-    [Project].[ClientId] AS [ClientId]
-    FROM [dbo].[Project] AS [Project]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Client__Currency__4BAC3F29" Association="Self.FK__Client__Currency__4BAC3F29">
             <End Role="Currency" EntitySet="Currency" />
             <End Role="Client" EntitySet="Client" />
@@ -280,7 +270,6 @@ warning 6002: The table/view 'Context.dbo.Project' does not have a primary key d
         <EntityType Name="Project">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="ProjectOwnerId" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />

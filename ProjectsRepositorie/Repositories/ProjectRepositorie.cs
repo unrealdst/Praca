@@ -23,7 +23,13 @@ namespace ProjectsRepositorie.Repositories
         {
             return dbContext
                 .Project
-                .Select(MappingProjectToStorageModel);
+                .Select(x => new ProjectStorageModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    ProjectOwnerId = x.ProjectOwnerId,
+                    ClientId = x.ClientId ?? 0
+                });
         }
 
         public ProjectStorageModel GetProject(int id)
@@ -31,7 +37,13 @@ namespace ProjectsRepositorie.Repositories
             return dbContext
                 .Project
                 .Where(x => x.Id == id)
-                .Select(MappingProjectToStorageModel)
+                .Select(x => new ProjectStorageModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    ProjectOwnerId = x.ProjectOwnerId,
+                    ClientId = x.ClientId ?? 0
+                })
                 .First();
         }
 
@@ -48,14 +60,6 @@ namespace ProjectsRepositorie.Repositories
             dbContext.Project.AddOrUpdate(dbProject);
             dbContext.SaveChanges();
         }
-
-        private static Expression<Func<Project, ProjectStorageModel>> MappingProjectToStorageModel => 
-            x => new ProjectStorageModel()
-        {
-            Id = x.Id,
-            Name = x.Name,
-            ProjectOwnerId = x.ProjectOwnerId,
-            ClientId = x.ClientId ?? 0
-        };
+            
     }
 }

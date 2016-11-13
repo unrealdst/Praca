@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using ProjectsRepositorie.Interfaces;
 using ProjectsRepositorie.Models;
 using ProjectsService.DomainModel;
@@ -30,7 +28,8 @@ namespace ProjectsService.Services
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ProjectStorageModel, ProjectDomainModel>();
-                cfg.CreateMap<AddProjectDomainModel, ProjectStorageModel>();
+                cfg.CreateMap<AddProjectDomainModel, ProjectStorageModel>()
+                    .ForMember(dest => dest.Name, opts => opts.MapFrom(src => src.ProjectName));
             });
             mapper = config.CreateMapper();
         }
@@ -38,7 +37,7 @@ namespace ProjectsService.Services
 
         public IEnumerable<ProjectDomainModel> GetAllProjects()
         {
-            var projects = projectRepositorie.GetProjects().ToList();
+            var projects = projectRepositorie.GetProjects().ToList();            
             return mapper.Map<IEnumerable<ProjectDomainModel>>(projects);
         }
 

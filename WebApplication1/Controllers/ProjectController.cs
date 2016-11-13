@@ -22,8 +22,16 @@ namespace WebApplication1.Controllers
                 cfg.CreateMap<CreateProjectInputModel, AddProjectDomainModel>();
                 cfg.CreateMap<CreateProjectDomainModel, CreateProjectViewModel>();
                 cfg.CreateMap<UserStorageModel, UserViewModel>()
-                .ForMember(dest => dest.Name,opts => opts.MapFrom(src => src.UserName));
+                    .ForMember(dest => dest.Name, opts => opts.MapFrom(src => src.UserName));
                 cfg.CreateMap<ClientStorageModel, ClientViewModel>();
+                cfg.CreateMap<CreateProjectInputModel, CreateProjectViewModel>()
+                    .ForMember(dest => dest.ProjectName, opts => opts.MapFrom(src => src.ProjectName))
+                    .ForMember(dest => dest.DeafultClientId, opts => opts.MapFrom(src => src.Clients))
+                    .ForMember(dest => dest.DefaultUserId, opts => opts.MapFrom(src => src.ProjectOwners))
+                    .ForAllOtherMembers(x => x.Ignore());
+                cfg.CreateMap<CreateProjectInputModel, AddProjectDomainModel>()
+                    .ForMember(dest => dest.ProjectOwnerId, opts => opts.MapFrom(src => src.ProjectOwners))
+                    .ForMember(dest => dest.ClientId, opts => opts.MapFrom(src => src.Clients));
             });
             mapper = config.CreateMapper();
         }
@@ -36,10 +44,9 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create(CreateProjectViewModel inputModel = null)
+        public ActionResult Create(CreateProjectViewModel inputModel, bool inputNull = true)
         {
-
-            if (inputModel == null)
+            if (inputNull)
             {
                 inputModel = mapper.Map<CreateProjectViewModel>(projectListService.GetValueToViewModel());
             }
@@ -53,10 +60,11 @@ namespace WebApplication1.Controllers
             {
                 var addProjectDomainModel = mapper.Map<AddProjectDomainModel>(project);
                 projectListService.AddProject(addProjectDomainModel);
+                return RedirectToAction("ProjectsList", "ProjectLists");
             }
-            
-            var recritedModel = new CreateProjectViewModel();
-            return RedirectToAction("Create",new {inputModel = recritedModel});
+
+            var recritedModel = mapper.Map<CreateProjectViewModel>(project);
+            return RedirectToAction("Create", new {inputModel = recritedModel, inputNull = false});
         }
     }
 }
