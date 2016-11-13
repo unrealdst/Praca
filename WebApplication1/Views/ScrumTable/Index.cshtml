@@ -1,7 +1,14 @@
-﻿
+﻿@model WebApplication1.Models.TasksViewModels.ScrumTableViewModel
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "title";
+    Layout = "_Layout";
 }
 
-<h2>Index</h2>
+<h2>title</h2>
 
+
+@foreach (var a in Model.Tasks)
+{
+    @Html.Label(a.Title);
+}

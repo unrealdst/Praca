@@ -32,5 +32,6 @@ namespace DbContext.Models
         public virtual DbSet<Project> Project { get; set; }
         public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<Currency> Currency { get; set; }
+        public virtual DbSet<Task> Task { get; set; }
     }
 }

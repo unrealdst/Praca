@@ -1,9 +1,5 @@
-﻿using System;
-using System.Data.Entity.Migrations;
+﻿using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Linq.Expressions;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using DbContext.Models;
 using ProjectsRepositorie.Interfaces;
 using ProjectsRepositorie.Models;

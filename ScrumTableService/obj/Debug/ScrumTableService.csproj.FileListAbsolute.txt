@@ -1,0 +1,13 @@
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\ScrumTableService.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\ScrumTableService.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\AutoMapper.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\ScrumTableRepositorie.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\DbContext.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\EntityFramework.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\ScrumTableRepositorie.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\AutoMapper.xml
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\DbContext.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\EntityFramework.xml
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\obj\Debug\ScrumTableService.csprojResolveAssemblyReference.cache
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\obj\Debug\ScrumTableService.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\obj\Debug\ScrumTableService.pdb

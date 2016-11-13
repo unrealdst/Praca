@@ -91,3 +91,7 @@ C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\We
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Resources.CreateProject.resources
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Resources.Validation.resources
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Resources.Navigation.resources
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\bin\ScrumTableService.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\bin\ScrumTableRepositorie.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\bin\ScrumTableService.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\bin\ScrumTableRepositorie.pdb

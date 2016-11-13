@@ -207,6 +207,13 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Controllers\ProjectListsController.cs" />
     <Compile Include="Models\ProjectDetailViewModel.cs" />
+    <Compile Include="Models\ScrumTableViewModel.cs" />
+    <Compile Include="Models\TasksViewModels\BaseTaskViewModel.cs" />
+    <Compile Include="Models\TasksViewModels\BugViewModel.cs" />
+    <Compile Include="Models\TasksViewModels\ImprovmentViewModel.cs" />
+    <Compile Include="Models\TasksViewModels\QuestionViewModel.cs" />
+    <Compile Include="Models\TasksViewModels\ScrumTableViewModel.cs" />
+    <Compile Include="Models\TasksViewModels\TaskViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\CreateProject.Designer.cs">
@@ -427,6 +434,10 @@
     <ProjectReference Include="..\ProjectsService\ProjectsService.csproj">
       <Project>{9D52737C-C95D-4E55-9BA9-92ED5D90F47A}</Project>
       <Name>ProjectsService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScrumTableService\ScrumTableService.csproj">
+      <Project>{86E5ABE6-F691-429A-886C-4DF30703FB9B}</Project>
+      <Name>ScrumTableService</Name>
     </ProjectReference>
     <ProjectReference Include="..\UsersRepositories\UsersRepositories.csproj">
       <Project>{24045233-11CC-437E-8B89-CECA54B4BC7A}</Project>

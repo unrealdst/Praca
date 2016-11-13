@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2342d576296f4174b87148074e85a873" Name="Diagram1">
+      <Diagram DiagramId="2342d576296f4174b87148074e85a873" Name="Diagram1" ZoomLevel="63">
         <EntityTypeShape EntityType="ContextModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ContextModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ContextModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
@@ -18,6 +18,10 @@
         <EntityTypeShape EntityType="ContextModel.Currency" Width="1.5" PointX="4.5" PointY="7" />
         <AssociationConnector Association="ContextModel.FK__Client__Currency__4BAC3F29" />
         <AssociationConnector Association="ContextModel.FK__Project__ClientI__4F7CD00D" />
+        <EntityTypeShape EntityType="ContextModel.Task" Width="1.5" PointX="7.375" PointY="2.5" />
+        <AssociationConnector Association="ContextModel.FK__Task__AssigneId__70DDC3D8" />
+        <AssociationConnector Association="ContextModel.FK__Task__ReporterId__6FE99F9F" />
+        <AssociationConnector Association="ContextModel.FK__Task__ProjectId__01142BA1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

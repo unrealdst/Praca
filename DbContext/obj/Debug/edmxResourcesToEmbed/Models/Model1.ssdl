@@ -78,6 +78,19 @@
     <Property Name="ProjectOwnerId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="ClientId" Type="int" />
   </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nchar" MaxLength="128" Nullable="false" />
+    <Property Name="Description" Type="nchar" MaxLength="512" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="ReporterId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="AssigneId" Type="nvarchar" MaxLength="128" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="FK__Client__Currency__4BAC3F29">
     <End Role="Currency" Type="Self.Currency" Multiplicity="1" />
     <End Role="Client" Type="Self.Client" Multiplicity="*" />
@@ -111,6 +124,42 @@
       </Principal>
       <Dependent Role="Project">
         <PropertyRef Name="ProjectOwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Task__AssigneId__70DDC3D8">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="AssigneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Task__ProjectId__01142BA1">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Task__ReporterId__6FE99F9F">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="Task" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="ReporterId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -179,6 +228,7 @@
     <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Client__Currency__4BAC3F29" Association="Self.FK__Client__Currency__4BAC3F29">
       <End Role="Currency" EntitySet="Currency" />
       <End Role="Client" EntitySet="Client" />
@@ -190,6 +240,18 @@
     <AssociationSet Name="FK__Project__Project__37A5467C" Association="Self.FK__Project__Project__37A5467C">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Task__AssigneId__70DDC3D8" Association="Self.FK__Task__AssigneId__70DDC3D8">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Task" EntitySet="Task" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Task__ProjectId__01142BA1" Association="Self.FK__Task__ProjectId__01142BA1">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="Task" EntitySet="Task" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Task__ReporterId__6FE99F9F" Association="Self.FK__Task__ReporterId__6FE99F9F">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Task" EntitySet="Task" />
     </AssociationSet>
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
