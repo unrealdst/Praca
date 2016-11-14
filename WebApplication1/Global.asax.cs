@@ -3,17 +3,16 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
-using AutoMapper;
 using DbContext.Models;
-using ProjectsRepositorie;
 using ProjectsRepositorie.Interfaces;
 using ProjectsRepositorie.Repositories;
-using ProjectsService;
 using ProjectsService.Interfaces;
 using ProjectsService.Services;
+using ScrumTableRepositorie.Interfaces;
+using ScrumTableRepositorie.Repositories;
+using ScrumTableService.Interfaces;
 using UsersRepositories.Interfaces;
 using UsersRepositories.Repositories;
-using WebApplication1.Common;
 using WebApplication1.Controllers;
 
 namespace WebApplication1
@@ -64,11 +63,13 @@ namespace WebApplication1
             builder.RegisterType<ProjectRepositorie>().As<IProjectRepositorie>();
             builder.RegisterType<UserRepositorie>().As<IUserRepositorie>();
             builder.RegisterType<ClientRepositorie>().As<IClientRepositorie>();
+            builder.RegisterType<TaskRepositorie>().As<ITaskRepositorie>();
         }
 
         private static void RegisterServices(ContainerBuilder builder)
         {
             builder.RegisterType<ProjectListService>().As<IProjectListService>();
+            builder.RegisterType<ScrumTableService.Services.ScrumTableService>().As<IScrumTableService>();
         }
 
         private static void RegisterControllers(ContainerBuilder builder)
@@ -76,6 +77,7 @@ namespace WebApplication1
             builder.RegisterType<HomeController>().InstancePerRequest();
             builder.RegisterType<ProjectListsController>().InstancePerRequest();
             builder.RegisterType<ProjectController>().InstancePerRequest();
+            builder.RegisterType<ScrumTableController>().InstancePerRequest();
         }
 
 

@@ -46,6 +46,9 @@
   <ItemGroup>
     <Compile Include="Common\TaskStatus.cs" />
     <Compile Include="Common\TaskType.cs" />
+    <Compile Include="DomainModels\AddTaskDomainModel.cs" />
+    <Compile Include="DomainModels\CreateTaskViewModelDateDomainModel.cs" />
+    <Compile Include="DomainModels\DropDownItemListDomainModel.cs" />
     <Compile Include="DomainModels\Tasks\BaseTaskDomainModel.cs" />
     <Compile Include="DomainModels\Tasks\BugDomainModel.cs" />
     <Compile Include="DomainModels\Tasks\ImprovmentDomainModel.cs" />
@@ -60,9 +63,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProjectsRepositorie\ProjectsRepositories.csproj">
+      <Project>{551B1FDD-CD22-4400-8AF6-E227FB47C6DF}</Project>
+      <Name>ProjectsRepositories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ScrumTableRepositorie\ScrumTableRepositorie.csproj">
       <Project>{DC966719-57A9-436F-86A8-9BF883F8E7AF}</Project>
       <Name>ScrumTableRepositorie</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsersRepositories\UsersRepositories.csproj">
+      <Project>{24045233-11CC-437E-8B89-CECA54B4BC7A}</Project>
+      <Name>UsersRepositories</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,9 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
+using ProjectsService.DomainModel;
+using ScrumTableService.DomainModels;
 using ScrumTableService.DomainModels.Tasks;
 using ScrumTableService.Interfaces;
+using WebApplication1.Models;
+using WebApplication1.Models.CommonModels;
 using WebApplication1.Models.TasksViewModels;
+using ScrumTableViewModel = WebApplication1.Models.TasksViewModels.ScrumTableViewModel;
 
 namespace WebApplication1.Controllers
 {
@@ -21,6 +26,15 @@ namespace WebApplication1.Controllers
                 cfg.CreateMap<ImprovmentDomainModel, ImprovmentViewModel>();
                 cfg.CreateMap<QuestionsDomainModel, QuestionViewModel>();
                 cfg.CreateMap<TaskDomainModel, TaskViewModel>();
+                cfg.CreateMap<CreateTaskInputModel, AddTaskDomainModel>();
+                cfg.CreateMap<CreateTaskInputModel, CreateTaskViewModel>();
+                cfg.CreateMap<DropDownItemListDomainModel<string, string>, DropDownListItemViewModel<string, string>>();
+                cfg.CreateMap<DropDownItemListDomainModel<int, string>, DropDownListItemViewModel<int, string>>();
+                cfg.CreateMap<CreateTaskViewModelDateDomainModel, CreateTaskViewModel>()
+                    .ForMember(dest => dest.Projects,opts => opts.MapFrom(src => src.Projects))
+                    .ForMember(dest => dest.Users,opts => opts.MapFrom(src => src.Users));
+
+
             });
             mapper = config.CreateMapper();
         }
@@ -33,6 +47,31 @@ namespace WebApplication1.Controllers
                 Tasks = mapper.Map<IEnumerable<BaseTaskViewModel>>(tasks)
             };
             return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Create(CreateTaskViewModel viewModel, int? projectId = null,bool inputNull = true)
+        {
+            if (inputNull)
+            {
+                CreateTaskViewModelDateDomainModel doaminModel = ScrumTableService.GetValueToViewModel(projectId ?? 0);
+                viewModel = mapper.Map<CreateTaskViewModel>(doaminModel);
+            }
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Create(CreateTaskInputModel inputModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var addTaskDomainModel = mapper.Map<AddTaskDomainModel>(inputModel);
+                ScrumTableService.AddTask(addTaskDomainModel);
+                return RedirectToAction("ProjectsList", "ProjectLists");
+            }
+
+            var recritedModel = mapper.Map<CreateTaskViewModel>(inputModel);
+            return RedirectToAction("Create", new { inputModel = recritedModel, inputModel.ProjectId, inputNull = false });
         }
     }
 }

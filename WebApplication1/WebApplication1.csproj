@@ -201,8 +201,11 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClientViewModel.cs" />
+    <Compile Include="Models\CommonModels\DropDownListItemViewModel.cs" />
     <Compile Include="Models\CreateProjectInputModel.cs" />
     <Compile Include="Models\CreateProjectViewModel.cs" />
+    <Compile Include="Models\CreateTaskInputModel.cs" />
+    <Compile Include="Models\CreateTaskViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Controllers\ProjectListsController.cs" />
@@ -409,6 +412,7 @@
     <Content Include="Views\Project\Project.cshtml" />
     <Content Include="Views\Project\Create.cshtml" />
     <Content Include="Views\ScrumTable\Index.cshtml" />
+    <Content Include="Views\ScrumTable\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -434,6 +438,10 @@
     <ProjectReference Include="..\ProjectsService\ProjectsService.csproj">
       <Project>{9D52737C-C95D-4E55-9BA9-92ED5D90F47A}</Project>
       <Name>ProjectsService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScrumTableRepositorie\ScrumTableRepositorie.csproj">
+      <Project>{DC966719-57A9-436F-86A8-9BF883F8E7AF}</Project>
+      <Name>ScrumTableRepositorie</Name>
     </ProjectReference>
     <ProjectReference Include="..\ScrumTableService\ScrumTableService.csproj">
       <Project>{86E5ABE6-F691-429A-886C-4DF30703FB9B}</Project>

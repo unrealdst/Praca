@@ -44,13 +44,13 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create(CreateProjectViewModel inputModel, bool inputNull = true)
+        public ActionResult Create(CreateProjectViewModel viewModel, bool inputNull = true)
         {
             if (inputNull)
             {
-                inputModel = mapper.Map<CreateProjectViewModel>(projectListService.GetValueToViewModel());
+                viewModel = mapper.Map<CreateProjectViewModel>(projectListService.GetValueToViewModel());
             }
-            return View(inputModel);
+            return View(viewModel);
         }
 
         [HttpPost]

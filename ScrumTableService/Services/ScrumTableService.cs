@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Linq;
 using AutoMapper;
+using ProjectsRepositorie.Interfaces;
 using ScrumTableRepositorie.Interfaces;
 using ScrumTableRepositorie.Models;
 using ScrumTableService.Common;
+using ScrumTableService.DomainModels;
 using ScrumTableService.DomainModels.Tasks;
 using ScrumTableService.Interfaces;
-using TaskStatus = ScrumTableService.Common.TaskStatus;
+using UsersRepositories.Interfaces;
 
 namespace ScrumTableService.Services
 {
@@ -14,10 +16,14 @@ namespace ScrumTableService.Services
     {
         private readonly IMapper mapper;
         private readonly ITaskRepositorie taskRepositorie;
+        private readonly IUserRepositorie userRepositorie;
+        private readonly IProjectRepositorie projectRepositorie;
 
-        public ScrumTableService(ITaskRepositorie taskRepositorie)
+        public ScrumTableService(ITaskRepositorie taskRepositorie, IUserRepositorie userRepositorie, IClientRepositorie clientRepositorie, IProjectRepositorie projectRepositorie)
         {
             this.taskRepositorie = taskRepositorie;
+            this.userRepositorie = userRepositorie;
+            this.projectRepositorie = projectRepositorie;
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<TaskStorageModel, BugDomainModel>();
@@ -52,6 +58,31 @@ namespace ScrumTableService.Services
             }
     
             return result;
+        }
+
+        public void AddTask(AddTaskDomainModel addTaskDomainModel)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public CreateTaskViewModelDateDomainModel GetValueToViewModel(int? projectId)
+        {
+            var result = new CreateTaskViewModelDateDomainModel
+            {
+                Projects = projectRepositorie.GetProjects().ToList().Select(x => new DropDownItemListDomainModel<int, string>()
+                {
+                    Id = x.Id,
+                    Value = x.Name
+                }),
+                Users = userRepositorie.GetUsers().ToList().Select(x => new DropDownItemListDomainModel<string, string>()
+                {
+                    Id = x.Id,
+                    Value = x.UserName
+                })
+            };
+
+            return result;
+
         }
     }
 }

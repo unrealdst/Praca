@@ -11,3 +11,7 @@ C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\Sc
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\obj\Debug\ScrumTableService.csprojResolveAssemblyReference.cache
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\obj\Debug\ScrumTableService.dll
 C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\obj\Debug\ScrumTableService.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\ProjectsRepositorie.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\UsersRepositories.dll
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\ProjectsRepositorie.pdb
+C:\Users\Cebulotron3000\documents\visual studio 2015\Projects\WebApplication1\ScrumTableService\bin\Debug\UsersRepositories.pdb

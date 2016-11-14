@@ -2,13 +2,35 @@
 
 @{
     ViewBag.Title = "title";
-    Layout = "_Layout";
 }
 
 <h2>title</h2>
+ 
+
+    @Html.Label(Model.Tasks.Count().ToString())
+
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>
+                a
+            </th>
+            <th>
+                b
+            </th>
+            <th>
+                c
+            </th>
+            <th>
+                d
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+    </table>
 
 
-@foreach (var a in Model.Tasks)
-{
-    @Html.Label(a.Title);
-}
+</div>
