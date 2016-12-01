@@ -16,10 +16,10 @@
             <div class="col-md-3">
                 <div class="panel panel-default input-panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">"ToDOlejter"</h3>
+                        <h3 class="panel-title">Tytuł</h3>
                     </div>
                     <div class="panel-body ">
-                        @*@Html.EditorFor(model => model., new { htmlAttributes = new { @class = "form-control" } })*@
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Projects, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -27,7 +27,7 @@
             <div class="col-md-3">
                 <div class="panel panel-default input-panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">"ToDOlejter"</h3>
+                        <h3 class="panel-title">Projekty</h3>
                     </div>
                     <div class="panel-body">
                         @Html.DropDownListFor(m => m.Projects, new SelectList(Model.Projects, "Id", "Value"), new { @class = "selectpicker" })
@@ -38,11 +38,24 @@
             <div class="col-md-3">
                 <div class="panel panel-default input-panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">"ToDOlejter"</h3>
+                        <h3 class="panel-title">Przypnij</h3>
                     </div>
                     <div class="panel-body ">
                         @Html.DropDownListFor(m => m.Users, new SelectList(Model.Users, "Id", "Value"), new { @class = "selectpicker" })
                         @Html.ValidationMessageFor(model => model.Users, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default input-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Opis</h3>
+                    </div>
+                    <div class="panel-body ">
+                        @Html.TextAreaFor(model => model.Description,10,50, new { htmlAttributes = new { @class = "form-control", @cols=10 } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>

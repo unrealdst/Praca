@@ -63,8 +63,8 @@ namespace ProjectsService.Services
         }
 
         public void AddProject(AddProjectDomainModel addProjectDomainModel)
-        {            
-            projectRepositorie.AddProject(mapper.Map<ProjectStorageModel>(addProjectDomainModel));
+        {
+            projectRepositorie.AddProject(mapper.Map<ProjectStorageModel>(addProjectDomainModel)); //trolololo
         }
     }
 }

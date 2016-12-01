@@ -42,17 +42,27 @@
     border-radius: 0px;
 }
 
+.input-panel .panel-body textarea {
+    width: 100%;
+    height: 100%;
+}
+
 div.panel.panel-default.input-panel div.bootstrap-select {
     width: 100%;
     border-radius: 0px;
 }
 
-button a {
+button a, button a:hover {
     color: black;
     text-decoration: none;
 }
 
-a:hover, a:visited, a:link, a:active{
-    text-decoration: none;    
+a:visited, a:link, a:active{
+    text-decoration: none;
     color: black;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+

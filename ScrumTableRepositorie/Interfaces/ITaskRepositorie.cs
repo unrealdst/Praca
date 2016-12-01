@@ -7,5 +7,6 @@ namespace ScrumTableRepositorie.Interfaces
     public interface ITaskRepositorie
     {
         IQueryable<TaskStorageModel> GetTasksForProject(int projectId);
+        void InsertTask(TaskStorageModel storageModelTask);
     }
 }

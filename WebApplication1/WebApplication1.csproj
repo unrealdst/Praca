@@ -189,6 +189,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Common\VIewsMapping.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ClientListController.cs" />
     <Compile Include="Controllers\HelloWorld.cs" />
     <Compile Include="Controllers\HomeController.cs" />

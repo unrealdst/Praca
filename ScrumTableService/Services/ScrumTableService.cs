@@ -30,6 +30,7 @@ namespace ScrumTableService.Services
                 cfg.CreateMap<TaskStorageModel, ImprovmentDomainModel>();
                 cfg.CreateMap<TaskStorageModel, QuestionsDomainModel>();
                 cfg.CreateMap<TaskStorageModel, TaskDomainModel>();
+                cfg.CreateMap<AddTaskDomainModel, TaskStorageModel>();
             });
             mapper = config.CreateMapper();
         }
@@ -56,13 +57,14 @@ namespace ScrumTableService.Services
                         break;
                 }
             }
-    
             return result;
         }
 
-        public void AddTask(AddTaskDomainModel addTaskDomainModel)
+        public void AddTask(AddTaskDomainModel addTaskDomainModel, string reporterId)
         {
-            throw new System.NotImplementedException();
+            addTaskDomainModel.ReporterId = reporterId;
+            var storageModelTask = mapper.Map<TaskStorageModel>(addTaskDomainModel);
+            taskRepositorie.InsertTask(storageModelTask);
         }
 
         public CreateTaskViewModelDateDomainModel GetValueToViewModel(int? projectId)
